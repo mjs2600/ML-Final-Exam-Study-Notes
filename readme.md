@@ -32,6 +32,14 @@ some rewards and penalties and hopefully he will learn.
   * Policy Iteration
   * Value Iteration
 
+* Model-Based vs. Model-Free
+  * Model-Based requires knowledge of transition probabilities and rewards
+    * Policy Iteration
+    * Value Iteration
+  * Model-Free gets thrown into the world and learns the model on its own based  
+    on <s, a, s', r>
+    * Q Learning
+
 * Q Learning
   * Learning Rate
   * Exploration vs Exploitation
