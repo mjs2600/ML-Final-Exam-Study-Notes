@@ -37,7 +37,7 @@ some rewards and penalties and hopefully he will learn.
     * Policy Iteration
     * Value Iteration
   * Model-Free gets thrown into the world and learns the model on its own based  
-    on <s, a, s', r>
+    on "<s, a, s', r>" tuples.
     * Q Learning
 
 * Q Learning
