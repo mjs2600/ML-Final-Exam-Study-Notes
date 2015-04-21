@@ -47,7 +47,15 @@ some rewards and penalties and hopefully he will learn.
 * Q Learning
   * Learning Rate
   * Exploration vs Exploitation
+  * Epsilon Greedy
 
 * Game Theory
   * Zero Sum Games 
   * Nash Equilibria
+  * Subgame Perfect, Plausible Threats
+  * Pavlov
+  * Repeated Games
+  * Tit-for-tat
+  * Minimax
+  * Maximin
+  * Feasible Regions
