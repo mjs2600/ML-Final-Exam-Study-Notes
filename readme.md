@@ -4,7 +4,7 @@ More detailed info and reading can be found in the repo subdirectories
 ###Unsupervised Learning
 UL consists of algorithms that are meant to "explore" on their own and provide  
 the user with valuable information concerning their dataset/problem  
-
+* Randomized Optimization
 * Clustering
   * K Means
   * Expectation Maximization
@@ -18,9 +18,10 @@ the user with valuable information concerning their dataset/problem
   * PCA
   * ICA
   * LDA
-  * More?
+  * RCA
 
 * Information Theory
+  * Mutual Information 
   * ...
 
 ###Reinforcement Learning
@@ -45,3 +46,5 @@ some rewards and penalties and hopefully he will learn.
   * Exploration vs Exploitation
 
 * Game Theory
+  * Zero Sum Games 
+  * Nash Equilibria
