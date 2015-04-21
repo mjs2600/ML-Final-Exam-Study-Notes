@@ -56,6 +56,5 @@ some rewards and penalties and hopefully he will learn.
   * Pavlov
   * Repeated Games
   * Tit-for-tat
-  * Minimax
-  * Maximin
+  * Minimax, Maximin
   * Feasible Regions
