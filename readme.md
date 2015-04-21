@@ -1,6 +1,9 @@
 ##Content Overview/Important Concepts
 More detailed info and reading can be found in the repo subdirectories
 
+### Wiki Study Guide
+http://wiki.omscs.org/confluence/display/CS7641ML/CS7641.FA14.+Final+exam+prep
+
 ###Unsupervised Learning
 UL consists of algorithms that are meant to "explore" on their own and provide  
 the user with valuable information concerning their dataset/problem  
