@@ -9,8 +9,16 @@ UL consists of algorithms that are meant to "explore" on their own and provide
 the user with valuable information concerning their dataset/problem  
 * Randomized Optimization
 * Clustering
-  * K Means
+  * Single Linkage
+  * k-Means
+    * 1. Place k centers
+    * 2. Claim closest points
+    * 3. find the centers of the pioints
+    * 4. Move the centers to the clusters of points
+    * 5. Unless converged GOTO 2
   * Expectation Maximization
+    * Gaussian Means
+    * Uses expectation and maximization steps
 
 * Feature Selection
   * Filtering
