@@ -44,7 +44,12 @@ the user with valuable information concerning their dataset/problem
     * ![x_i](http://mathurl.com/2az2c7m.png) is weakly relevant if
       * it is not strongly relevant
       * ![There exists](http://mathurl.com/yhy6gla.png) a subset of features **S** such that adding             ![x_i](http://mathurl.com/2az2c7m.png) to **S** improves Bayes' Optimal Classifier
-
+      * ![x_i](http://mathurl.com/2az2c7m.png)  is otherwise irrelevant
+  * Relevance vs. Usefulness
+    * **Relevance** measures the effect the variable has on the Bayes' Optimal
+      Classifier
+    * ** Usefulness** measures the effect the variable has on the _error_ of a
+      _particular predictor_ (ANN, DT, etc.)
 
 * Feature Transformation
   * PCA
