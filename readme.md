@@ -39,11 +39,11 @@ the user with valuable information concerning their dataset/problem
       * Forward/Backward sequential selection: [good description and
         implementation](http://sebastianraschka.com/Articles/2014_sequential_sel_algos.html)
   * Relevance
-    * ![x_i](http://mathurl.com/2az2c7m) is strongly relevant if removing it degrades the Bayes' Optimal
+    * ![x_i](http://mathurl.com/2az2c7m.png) is strongly relevant if removing it degrades the Bayes' Optimal
       Classifier
-    * ![x_i](http://mathurl.com/2az2c7m) is weakly relevant if
+    * ![x_i](http://mathurl.com/2az2c7m.png) is weakly relevant if
       * it is not strongly relevant
-      * ![There exists](http://mathurl.com/yhy6gla) a subset of features **S** such that adding             ![x_i](http://mathurl.com/2az2c7m) to **S** improves Bayes' Optimal Classifier
+      * ![There exists](http://mathurl.com/yhy6gla.png) a subset of features **S** such that adding             ![x_i](http://mathurl.com/2az2c7m.png) to **S** improves Bayes' Optimal Classifier
 
 
 * Feature Transformation
