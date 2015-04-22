@@ -1,9 +1,3 @@
-<head>
-  <script type="text/javascript"
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script>
-</head>
-
 ##Content Overview/Important Concepts
 More detailed info and reading can be found in the repo subdirectories
 
@@ -19,7 +13,7 @@ the user with valuable information concerning their dataset/problem
   * k-Means
     * 1. Place k centers
     * 2. Claim closest points
-    * 3. find the centers of the pioints
+    * 3. find the centers of the points
     * 4. Move the centers to the clusters of points
     * 5. Unless converged GOTO 2
   * Expectation Maximization
@@ -45,12 +39,11 @@ the user with valuable information concerning their dataset/problem
       * Forward/Backward sequential selection: [good description and
         implementation](http://sebastianraschka.com/Articles/2014_sequential_sel_algos.html)
   * Relevance
-    * $x_i$ is strongly relevant if removing it degrades the Bayes' Optimal
+    * ![x_i](http://mathurl.com/2az2c7m) is strongly relevant if removing it degrades the Bayes' Optimal
       Classifier
-    * $x_i$ is weakly relevant if
+    * ![x_i](http://mathurl.com/2az2c7m) is weakly relevant if
       * it is not strongly relevant
-      * $\exists$ a subset of features $S$ such that adding $x_i$ to $S$
-        improves Bayes' Optimal Classifier
+      * ![There exists](http://mathurl.com/yhy6gla) a subset of features **S** such that adding             ![x_i](http://mathurl.com/2az2c7m) to **S** improves Bayes' Optimal Classifier
 
 
 * Feature Transformation
