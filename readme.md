@@ -60,7 +60,8 @@ the user with valuable information concerning their dataset/problem
       least possible L2 (squared) error compared to any other reduction
     * Eigenvalues are monotonically non-increasing and are proportional to
       variance along each principal component (eigenvector). **Eigenvalue of 0
-      implies zero variance which means that PC is irrelevant**
+      implies zero variance which means the corresponding principal component
+      is irrelevant**
     * Finds **"globally"** varying features (image brightness, saturation, etc.)
     * Fast algorithms available
   * ICA
