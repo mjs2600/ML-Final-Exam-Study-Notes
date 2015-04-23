@@ -86,8 +86,18 @@ the user with valuable information concerning their dataset/problem
       data based on class.
 
 * Information Theory
+  * Entropy
+    * [A characterization of uncertainty about a source of    information](http://en.wikipedia.org/wiki/Entropy_(information_theory)) ![Entropy Formula](http://mathurl.com/pdmz66k.png)
+    * Joint Entropy
+      * [The entropy contained by the combination of two variables](http://en.wikipedia.org/wiki/Joint_entropy) ![Joint Entropy Formula](http://mathurl.com/l3t2ekl.png)
+    * Conditional Entropy
+      * [The entropy of one variable, given another](http://en.wikipedia.org/wiki/Conditional_entropy) ![Conditional Entropy Formula](http://mathurl.com/pvq7nq4.png)
   * Mutual Information
-  * ...
+    * [The reduction of entropy of a variable, given knowledge of another variable](http://en.wikipedia.org/wiki/Mutual_information) ![Mutual Info Formula](http://mathurl.com/o7es4gh.png)
+    * KL Divergence
+      * [A non-symmetric measure of the difference between two probability distributions P and Q](http://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) ![KL Divergence Equation](http://mathurl.com/kld5umv.png)
+      * Can be used in supervised learning as an alternative to squared error
+
 
 ###Reinforcement Learning
 Put an agent into a world (make sure you can describe it with an MDP!), give him
