@@ -48,14 +48,41 @@ the user with valuable information concerning their dataset/problem
   * Relevance vs. Usefulness
     * **Relevance** measures the effect the variable has on the Bayes' Optimal
       Classifier
-    * ** Usefulness** measures the effect the variable has on the _error_ of a
+    * **Usefulness** measures the effect the variable has on the _error_ of a
       _particular predictor_ (ANN, DT, etc.)
 
 * Feature Transformation
-  * PCA
+  * PCA: [Good Slides](http://www.cc.gatech.edu/~agray/4245fall10/lecture18.pdf)
+    * Example of an eigenproblem
+    * Finds direction (eigenvectors) of **maximum variance**
+    * All principal components (eigenvectors) are mutually orthogonal
+    * Reconstructing data from the principal components is proven to have the
+      least possible L2 (squared) error compared to any other reduction
+    * Eigenvalues are monotonically non-increasing and are proportional to
+      variance along each principal component (eigenvector). **Eigenvalue of 0
+      implies zero variance which means that PC is irrelevant**
+    * Finds **"globally"** varying features (image brightness, saturation, etc.)
+    * Fast algorithms available
   * ICA
-  * LDA
+    * Finds new features that are completely **independent** (from each other).
+      i.e. they share no mutual information
+    * Attempts to maximize the mutual information between the **original**
+      and **transformed** data.  This allows original data to be reconstructed
+      fairly easily from the transformed data.
+    * Blind Source Separation (Cocktail Party Problem)
+    * Finds **"locally"** varying features (image edges, facial features)
   * RCA
+    * Generates random directions
+    * It works! If you want to use it to preprocess classification data...
+        * Is able to capture correlations between data, but in order for this to
+          be true, you must often reduce to a larger number of components than
+          with PCA or ICA.
+    * Can't really reconstruct the original data well.
+    * Biggest advantage is speed.
+  * LDA
+    * Requires data labels
+    * Finds projections that discriminate based on the labels. i.e. separates
+      data based on class.
 
 * Information Theory
   * Mutual Information
