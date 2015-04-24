@@ -169,7 +169,19 @@ some rewards and penalties and hopefully he will learn.
     * Can use starting value of Q function as a sort of exploration
 
 * **Game Theory**
-  * Zero Sum Games
+  * [Zero Sum Games](http://en.wikipedia.org/wiki/Zero-sum_game)
+    * A mathematical representation of a situation in which each participant's
+      gain (or loss) of utility is exactly balanced by the losses (or gains)
+      of the utility of the other participant(s).
+  * **Perfect Information Game**
+    * All agents know the states of other agents
+    * Agents follow [**_pure strategies_**](http://en.wikipedia.org/wiki/Strategy_%28game_theory%29#Pure_and_mixed_strategies)
+    * minimax == maximin
+  * **Hidden Information Game**
+    * Some information regarding the state of a given agent is not know by the
+      other agent(s)
+    * Agents follow [**_mixed strategies_**]([**_pure strategies_**](http://en.wikipedia.org/wiki/Strategy_%28game_theory%29#Pure_and_mixed_strategies))  
+    * minimax != maximin
   * Nash Equilibria
   * Subgame Perfect, Plausible Threats
   * Pavlov
