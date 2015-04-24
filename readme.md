@@ -23,6 +23,10 @@ the user with valuable information concerning their dataset/problem
   * Expectation Maximization
     * Gaussian Means
     * Uses expectation and maximization steps
+  * Properties of Clustering Algorithms (Pick 2)
+    * Richness
+    * Scale Invariance
+    * Consistency
 
 * Feature Selection
   * Filtering
