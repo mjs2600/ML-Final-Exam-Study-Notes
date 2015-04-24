@@ -93,7 +93,7 @@ the user with valuable information concerning their dataset/problem
   * Conditional Entropy: [The entropy of one variable, given another](http://en.wikipedia.org/wiki/Conditional_entropy)
     * ![Conditional Entropy Formula](http://mathurl.com/pvq7nq4.png)
   * Mutual Information: [The reduction of entropy of a variable, given knowledge of another variable](http://en.wikipedia.org/wiki/Mutual_information)
-    *![Mutual Info Formula](http://mathurl.com/o7es4gh.png)
+    * ![Mutual Info Formula](http://mathurl.com/o7es4gh.png)
   * KL Divergence: [A non-symmetric measure of the difference between two probability distributions P and Q](http://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence)
     * ![KL Divergence Equation](http://mathurl.com/kld5umv.png)
     * Can be used in supervised learning as an alternative to squared error
@@ -104,9 +104,43 @@ Put an agent into a world (make sure you can describe it with an MDP!), give him
 some rewards and penalties and hopefully he will learn.
 
 * Markov Decision Processes
-  * States, Transitions, Rewards
-  * Policy Iteration
+  * Building a MDP
+    * States
+      * MDP should contain all states that an agent could be in.
+    * Actions
+      * All actions an agent can perform.  Sometimes this is a function of state,
+        but more often it is a list of actions that could be performed in any state
+    * Transitions (model)
+      * Probability that the agent will arrive in a new state, given that it takes
+        a certain action in its current state: P(s'|s, a)
+    * Rewards
+      * Easiest to think about as a function of state (i.e. when the agent is in a
+        state it receives a reward).  However, it is often a function of a
+        [s, a] tuple or a [s, a, s'] tuple.
+    * Policy
+      * A list that contains the action that should be taken by the agent in each
+        state.
+      * The **optimal policy** is the policy that maximizes the agent's long
+        term expected reward.
+  * Utility
+    * The utility of a state is the reward at that state plus all the (discounted)
+      reward that will be received from that state to infinity.
+    * Accounts for _delayed_ reward
+    * Described by the Bellman Equation
+      * ![Bellman Equation](http://mathurl.com/oj75ljf.png)
   * Value Iteration
+      * "Solve" (iteratively until convergence, more like hill climb) Bellman
+        Equation.
+      * When we have maximum utility, the policy which yields that utility can
+        be found in a straightforward manner.
+  * Policy Iteration
+      * Start with random (or not) initial policy.
+      * Evaluate the utility of that policy.
+      * Update policy (in a hill climbing-ish way) to the neighboring policy that
+        maximizes the expected utility.
+  * Discount Factor, ![gamma](http://mathurl.com/pbhmxd.png) (typically between 0 and 1),
+    describes the value placed on future reward.  The higher ![gamma](http://mathurl.com/pbhmxd.png) is,
+    the more emphasis is placed on future reward.
 
 * Model-Based vs. Model-Free
   * Model-Based requires knowledge of transition probabilities and rewards
