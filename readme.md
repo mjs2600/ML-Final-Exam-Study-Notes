@@ -5,11 +5,15 @@ More detailed info and reading can be found in the repo subdirectories
 http://wiki.omscs.org/confluence/display/CS7641ML/CS7641.FA14.+Final+exam+prep
 
 ###Unsupervised Learning
-UL consists of algorithms that are meant to "explore" on their own and provide  
-the user with valuable information concerning their dataset/problem  
+UL consists of algorithms that are meant to "explore" on their own and provide
+the user with valuable information concerning their dataset/problem
 * Randomized Optimization
 * Clustering
   * Single Linkage
+    * Consider each of n points a cluster
+    * Find the distance between the closest two points in every cluster
+    * Merge the closest two clusters
+    * Repeat n - k times to get k clusters
   * k-Means
     * 1. Place k centers
     * 2. Claim closest points
@@ -28,7 +32,7 @@ the user with valuable information concerning their dataset/problem
     * Tends to ignore relationships between features
     * Decision Trees do this naturally (Filter on information gain)
   * Wrapping
-    * "Wrap" the learner into the feature selection.  Choose features based on  
+    * "Wrap" the learner into the feature selection.  Choose features based on
       how the learner performs.
     * Takes into account learner bias
     * Good at determining feature relationships (as they pertain to the success
@@ -113,7 +117,7 @@ some rewards and penalties and hopefully he will learn.
   * Model-Based requires knowledge of transition probabilities and rewards
     * Policy Iteration
     * Value Iteration
-  * Model-Free gets thrown into the world and learns the model on its own based  
+  * Model-Free gets thrown into the world and learns the model on its own based
     on "[s, a, s', r]" tuples.
     * Q Learning
 
