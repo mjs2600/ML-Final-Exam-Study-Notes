@@ -161,7 +161,7 @@ some rewards and penalties and hopefully he will learn.
   * Learning Rate, ![alpha](http://mathurl.com/827tag.png), is how far we move
     each iteration.
   * If each action is executed in each state an infinite number of times on an
-    infinite run and ![alpha](http://mathurl.com/827tag.png) is decayed appropriately, the Q values will converge with probability 1 to Q*
+    infinite run and ![alpha](http://mathurl.com/827tag.png) is decayed appropriately, the Q values will converge with probability 1 to Q*
   * Exploration vs Exploitation
     * Epsilon Greedy Exploration
       * Search randomly with some decaying probability like
@@ -169,7 +169,7 @@ some rewards and penalties and hopefully he will learn.
     * Can use starting value of Q function as a sort of exploration
 
 * **Game Theory**
-  * [Zero Sum Games](http://en.wikipedia.org/wiki/Zero-sum_game)
+  * [**Zero Sum Games**](http://en.wikipedia.org/wiki/Zero-sum_game)
     * A mathematical representation of a situation in which each participant's
       gain (or loss) of utility is exactly balanced by the losses (or gains)
       of the utility of the other participant(s).
@@ -181,12 +181,44 @@ some rewards and penalties and hopefully he will learn.
       other agent(s)
     * minimax != maximin
   * [**Pure Strategies**](http://en.wikipedia.org/wiki/Strategy_%28game_theory%29#Pure_and_mixed_strategies)
-  * [**_Mixed Strategies_**](http://en.wikipedia.org/wiki/Strategy_%28game_theory%29#Pure_and_mixed_strategies)
-  * [Nash Equilibrium](http://en.wikipedia.org/wiki/Nash_equilibrium)
+  * [**Mixed Strategies**](http://en.wikipedia.org/wiki/Strategy_%28game_theory%29#Pure_and_mixed_strategies)
+  * [**Nash Equilibrium**](http://en.wikipedia.org/wiki/Nash_equilibrium)
     * No player has anything to gain by changing only their own strategy.
-  * Subgame Perfect, Plausible Threats
-  * Pavlov
-  * Repeated Games
-  * Tit-for-tat
-  * Minimax, Maximin
-  * Feasible Regions
+  * Repeated Game Strategies
+    * Finding best response against a repeated game finite-state strategy is
+      the same as solving a MDP
+    * Tit-for-tat
+      * Start with cooperation for first game, copy opponent's strategy (from the
+        previous game) every game thereafter.
+    * Grim Trigger
+      * Cooperates until opponent defects, then defects forever
+    * Pavlov
+        * Cooperate if opponent agreed with your move, defect otherwise
+        * **Only strategy shown that is subgame perfect**
+  * Folk Theorem: Any feasible payoff profile that strictly dominates the
+    minmax/security level profile can be realized as a Nash equilibrium payoff
+    profile, with sufficiently large discount factor.
+    * In repeated games, the possibility of retaliation opens the
+      door for cooperation.
+    * Feasible Region
+      * The region of possible average payoffs for some joint strategy
+    * MinMax Profile
+      * A pair of payoffs (one for each player), that represent the payoffs that
+        can be achieved by a player defending itself from a malicious adversary.
+    * Subgame Perfect
+        * Always best response independent of history
+    * Plausible Threats
+  * **Zero Sum Stochastic Games**
+    * Value Iteration works!
+    * Minimax-Q converges
+    * Unique solution to Q*
+    * Policies can be computed independently
+    * Update efficient
+    * Q functions sufficient to specify policy
+  * **General Sum Stochastic Games**
+    * Value Iteration _doesn't_ work
+    * Minimax-Q _doesn't_ converge
+    * _No_ unique solution to Q*
+    * Policies _cannot_ be computed independently
+    * Update _not_ efficient
+    * Q functions _not_ sufficient to specify policy
