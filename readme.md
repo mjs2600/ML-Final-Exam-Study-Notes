@@ -100,6 +100,9 @@ the user with valuable information concerning their dataset/problem
 
 
 ###Reinforcement Learning
+
+[Reinforcement Learning: A Survey](http://www.jair.org/media/301/live-301-1562-jair.pdf)
+
 Put an agent into a world (make sure you can describe it with an MDP!), give him
 some rewards and penalties and hopefully he will learn.
 
