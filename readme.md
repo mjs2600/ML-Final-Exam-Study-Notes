@@ -180,7 +180,7 @@ some rewards and penalties and hopefully he will learn.
   * **Hidden Information Game**
     * Some information regarding the state of a given agent is not know by the
       other agent(s)
-    * Agents follow [**_mixed strategies_**]([**_pure strategies_**](http://en.wikipedia.org/wiki/Strategy_%28game_theory%29#Pure_and_mixed_strategies))  
+    * Agents follow [**_mixed strategies_**](http://en.wikipedia.org/wiki/Strategy_%28game_theory%29#Pure_and_mixed_strategies)
     * minimax != maximin
   * Nash Equilibria
   * Subgame Perfect, Plausible Threats
