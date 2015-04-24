@@ -106,7 +106,7 @@ the user with valuable information concerning their dataset/problem
 Put an agent into a world (make sure you can describe it with an MDP!), give him
 some rewards and penalties and hopefully he will learn.
 
-* Markov Decision Processes
+* **Markov Decision Processes**
   * Building a MDP
     * States
       * MDP should contain all states that an agent could be in.
@@ -145,7 +145,7 @@ some rewards and penalties and hopefully he will learn.
     describes the value placed on future reward.  The higher ![gamma](http://mathurl.com/pbhmxd.png) is,
     the more emphasis is placed on future reward.
 
-* Model-Based vs. Model-Free
+* **Model-Based vs. Model-Free**
   * Model-Based requires knowledge of transition probabilities and rewards
     * Policy Iteration
     * Value Iteration
@@ -153,12 +153,22 @@ some rewards and penalties and hopefully he will learn.
     on "[s, a, s', r]" tuples.
     * Q Learning
 
-* Q Learning
-  * Learning Rate
+* **Q Learning**
+  * Q Function is a modification of the Bellman Equation
+    * ![Q Function](http://mathurl.com/khys58v.png)
+    * ![U(s)](http://mathurl.com/o8lnnnk.png)
+    * ![Pi(s)](http://mathurl.com/pnfz5z6.png)
+  * Learning Rate, ![alpha](http://mathurl.com/827tag.png), is how far we move
+    each iteration.
+  * If each action is executed in each state an infinite number of times on an
+    infinite run and ![alpha](http://mathurl.com/827tag.png) is decayed appropriately, the Q values will converge with probability 1 to Q*
   * Exploration vs Exploitation
-  * Epsilon Greedy
+    * Epsilon Greedy Exploration
+      * Search randomly with some decaying probability like
+        Simulated Annealing
+    * Can use starting value of Q function as a sort of exploration
 
-* Game Theory
+* **Game Theory**
   * Zero Sum Games
   * Nash Equilibria
   * Subgame Perfect, Plausible Threats
