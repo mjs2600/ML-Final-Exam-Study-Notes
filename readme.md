@@ -10,15 +10,38 @@ the user with valuable information concerning their dataset/problem
 * Randomized Optimization
 * Clustering
   * Single Linkage
-  * k-Means
-    * 1. Place k centers
-    * 2. Claim closest points
-    * 3. find the centers of the points
-    * 4. Move the centers to the clusters of points
-    * 5. Unless converged GOTO 2
+    * Method:
+      1. Consider each point a cluster
+      2. Merge two closest clusters
+      3. Unless we have K clusters GOTO 2
+    * Links points closest to each other.
+    * Can result in "stringy" non-compact clusters
+  * K-Means
+    * Each iteration is polynomial
+    * Finite (exponential) iterations in theory, but usually much less in practice
+    * Always converges, but can get stuck with "weird" clusters depending on random
+      starting state
+      1. Place k centers
+      2. Claim closest points
+      3. find the centers of the points
+      4. Move the centers to the clusters of points
+      5. Unless converged GOTO 2
   * Expectation Maximization
     * Gaussian Means
     * Uses expectation and maximization steps
+    * Monotonically non-decreasing likelihood
+    * Does not converge (practically does)
+    * Can get stuck
+    * Works with any distribution (not just Gaussian)
+  * Richness
+    * For any assignment of objects to clusters, there is some distance matrix, D,
+      such that P_D returns that clustering
+  * Scale-Invariance
+    * Scaling distances by a positive value does not change the clustering
+  * Consistency
+    * Shrinking intra-cluster distances and expanding intercluster distances does
+      not change the clustering.
+  * **No clustering scheme can acheive all of Richness, Scale-Invariance, Consistency**
 
 * Feature Selection
   * Filtering
