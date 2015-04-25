@@ -60,6 +60,8 @@ the user with valuable information concerning their dataset/problem
       _particular predictor_ (ANN, DT, etc.)
 
 * Feature Transformation
+  * Polsemy: Same word different meaning - False Positives
+  * Synonomy: Different word same meaning - False Negatives
   * PCA: [Good Slides](http://www.cc.gatech.edu/~agray/4245fall10/lecture18.pdf)
     * Example of an eigenproblem
     * Finds direction (eigenvectors) of **maximum variance**
