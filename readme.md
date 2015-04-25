@@ -14,12 +14,22 @@ the user with valuable information concerning their dataset/problem
     * Find the distance between the closest two points in every cluster
     * Merge the closest two clusters
     * Repeat n - k times to get k clusters
-  * k-Means
-    * 1. Place k centers
-    * 2. Claim closest points
-    * 3. find the centers of the points
-    * 4. Move the centers to the clusters of points
-    * 5. Unless converged GOTO 2
+    * Method:
+      1. Consider each point a cluster
+      2. Merge two closest clusters
+      3. Unless we have K clusters GOTO 2
+    * Links points closest to each other.
+    * Can result in "stringy" non-compact clusters
+  * K-Means
+    * Each iteration is polynomial
+    * Finite (exponential) iterations in theory, but usually much less in practice
+    * Always converges, but can get stuck with "weird" clusters depending on random
+      starting state
+      1. Place k centers
+      2. Claim closest points
+      3. find the centers of the points
+      4. Move the centers to the clusters of points
+      5. Unless converged GOTO 2
   * Expectation Maximization
     * Gaussian Means
     * Uses expectation and maximization steps
@@ -27,6 +37,19 @@ the user with valuable information concerning their dataset/problem
     * Richness
     * Scale Invariance
     * Consistency
+    * Monotonically non-decreasing likelihood
+    * Does not converge (practically does)
+    * Can get stuck
+    * Works with any distribution (not just Gaussian)
+  * Richness
+    * For any assignment of objects to clusters, there is some distance matrix, D,
+      such that P_D returns that clustering
+  * Scale-Invariance
+    * Scaling distances by a positive value does not change the clustering
+  * Consistency
+    * Shrinking intra-cluster distances and expanding intercluster distances does
+      not change the clustering.
+  * **No clustering scheme can acheive all of Richness, Scale-Invariance, Consistency**
 
 * Feature Selection
   * Filtering
@@ -103,23 +126,59 @@ the user with valuable information concerning their dataset/problem
   * Conditional Entropy: [The entropy of one variable, given another](http://en.wikipedia.org/wiki/Conditional_entropy)
     * ![Conditional Entropy Formula](http://mathurl.com/pvq7nq4.png)
   * Mutual Information: [The reduction of entropy of a variable, given knowledge of another variable](http://en.wikipedia.org/wiki/Mutual_information)
-    *![Mutual Info Formula](http://mathurl.com/o7es4gh.png)
+    * ![Mutual Info Formula](http://mathurl.com/o7es4gh.png)
   * KL Divergence: [A non-symmetric measure of the difference between two probability distributions P and Q](http://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence)
     * ![KL Divergence Equation](http://mathurl.com/kld5umv.png)
     * Can be used in supervised learning as an alternative to squared error
 
 
 ###Reinforcement Learning
+
 [Reinforcement Learning: A Survey](http://www.jair.org/media/301/live-301-1562-jair.pdf)
+
 Put an agent into a world (make sure you can describe it with an MDP!), give him
 some rewards and penalties and hopefully he will learn.
 
-* Markov Decision Processes
-  * States, Transitions, Rewards
-  * Policy Iteration
+* **Markov Decision Processes**
+  * Building a MDP
+    * States
+      * MDP should contain all states that an agent could be in.
+    * Actions
+      * All actions an agent can perform.  Sometimes this is a function of state,
+        but more often it is a list of actions that could be performed in any state
+    * Transitions (model)
+      * Probability that the agent will arrive in a new state, given that it takes
+        a certain action in its current state: P(s'|s, a)
+    * Rewards
+      * Easiest to think about as a function of state (i.e. when the agent is in a
+        state it receives a reward).  However, it is often a function of a
+        [s, a] tuple or a [s, a, s'] tuple.
+    * Policy
+      * A list that contains the action that should be taken by the agent in each
+        state.
+      * The **optimal policy** is the policy that maximizes the agent's long
+        term expected reward.
+  * Utility
+    * The utility of a state is the reward at that state plus all the (discounted)
+      reward that will be received from that state to infinity.
+    * Accounts for _delayed_ reward
+    * Described by the Bellman Equation
+      * ![Bellman Equation](http://mathurl.com/oj75ljf.png)
   * Value Iteration
+      * "Solve" (iteratively until convergence, more like hill climb) Bellman
+        Equation.
+      * When we have maximum utility, the policy which yields that utility can
+        be found in a straightforward manner.
+  * Policy Iteration
+      * Start with random (or not) initial policy.
+      * Evaluate the utility of that policy.
+      * Update policy (in a hill climbing-ish way) to the neighboring policy that
+        maximizes the expected utility.
+  * Discount Factor, ![gamma](http://mathurl.com/pbhmxd.png) (typically between 0 and 1),
+    describes the value placed on future reward.  The higher ![gamma](http://mathurl.com/pbhmxd.png) is,
+    the more emphasis is placed on future reward.
 
-* Model-Based vs. Model-Free
+* **Model-Based vs. Model-Free**
   * Model-Based requires knowledge of transition probabilities and rewards
     * Policy Iteration
     * Value Iteration
@@ -127,17 +186,72 @@ some rewards and penalties and hopefully he will learn.
     on "[s, a, s', r]" tuples.
     * Q Learning
 
-* Q Learning
-  * Learning Rate
+* **Q Learning**
+  * Q Function is a modification of the Bellman Equation
+    * ![Q Function](http://mathurl.com/khys58v.png)
+    * ![U(s)](http://mathurl.com/o8lnnnk.png)
+    * ![Pi(s)](http://mathurl.com/pnfz5z6.png)
+  * Learning Rate, ![alpha](http://mathurl.com/827tag.png), is how far we move
+    each iteration.
+  * If each action is executed in each state an infinite number of times on an
+    infinite run and ![alpha](http://mathurl.com/827tag.png) is decayed appropriately, the Q values will converge with probability 1 to Q*
   * Exploration vs Exploitation
-  * Epsilon Greedy
+    * Epsilon Greedy Exploration
+      * Search randomly with some decaying probability like
+        Simulated Annealing
+    * Can use starting value of Q function as a sort of exploration
 
-* Game Theory
-  * Zero Sum Games
-  * Nash Equilibria
-  * Subgame Perfect, Plausible Threats
-  * Pavlov
-  * Repeated Games
-  * Tit-for-tat
-  * Minimax, Maximin
-  * Feasible Regions
+* **Game Theory**
+  * [**Zero Sum Games**](http://en.wikipedia.org/wiki/Zero-sum_game)
+    * A mathematical representation of a situation in which each participant's
+      gain (or loss) of utility is exactly balanced by the losses (or gains)
+      of the utility of the other participant(s).
+  * **Perfect Information Game**
+    * All agents know the states of other agents
+    * minimax == maximin
+  * **Hidden Information Game**
+    * Some information regarding the state of a given agent is not know by the
+      other agent(s)
+    * minimax != maximin
+  * [**Pure Strategies**](http://en.wikipedia.org/wiki/Strategy_%28game_theory%29#Pure_and_mixed_strategies)
+  * [**Mixed Strategies**](http://en.wikipedia.org/wiki/Strategy_%28game_theory%29#Pure_and_mixed_strategies)
+  * [**Nash Equilibrium**](http://en.wikipedia.org/wiki/Nash_equilibrium)
+    * No player has anything to gain by changing only their own strategy.
+  * Repeated Game Strategies
+    * Finding best response against a repeated game finite-state strategy is
+      the same as solving a MDP
+    * Tit-for-tat
+      * Start with cooperation for first game, copy opponent's strategy (from the
+        previous game) every game thereafter.
+    * Grim Trigger
+      * Cooperates until opponent defects, then defects forever
+    * Pavlov
+        * Cooperate if opponent agreed with your move, defect otherwise
+        * **Only strategy shown that is subgame perfect**
+  * Folk Theorem: Any feasible payoff profile that strictly dominates the
+    minmax/security level profile can be realized as a Nash equilibrium payoff
+    profile, with sufficiently large discount factor.
+    * In repeated games, the possibility of retaliation opens the
+      door for cooperation.
+    * Feasible Region
+      * The region of possible average payoffs for some joint strategy
+    * MinMax Profile
+      * A pair of payoffs (one for each player), that represent the payoffs that
+        can be achieved by a player defending itself from a malicious adversary.
+    * Subgame Perfect
+        * Always best response independent of history
+    * Plausible Threats
+  * **Zero Sum Stochastic Games**
+    * Value Iteration works!
+    * Minimax-Q converges
+    * Unique solution to Q*
+    * Policies can be computed independently
+    * Update efficient
+    * Q functions sufficient to specify policy
+  * **General Sum Stochastic Games**
+    * Value Iteration _doesn't_ work
+    * Minimax-Q _doesn't_ converge
+    * _No_ unique solution to Q*
+    * Policies _cannot_ be computed independently
+    * Update _not_ efficient
+    * Q functions _not_ sufficient to specify policy
