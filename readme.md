@@ -7,6 +7,7 @@ http://wiki.omscs.org/confluence/display/CS7641ML/CS7641.FA14.+Final+exam+prep
 ###Unsupervised Learning
 UL consists of algorithms that are meant to "explore" on their own and provide
 the user with valuable information concerning their dataset/problem
+
 * Randomized Optimization
 * Clustering
   * Single Linkage
@@ -33,14 +34,14 @@ the user with valuable information concerning their dataset/problem
   * Expectation Maximization
     * Gaussian Means
     * Uses expectation and maximization steps
-  * Properties of Clustering Algorithms (Pick 2)
-    * Richness
-    * Scale Invariance
-    * Consistency
     * Monotonically non-decreasing likelihood
     * Does not converge (practically does)
     * Can get stuck
     * Works with any distribution (not just Gaussian)
+  * Properties of Clustering Algorithms (Pick 2)
+    * Richness
+    * Scale Invariance
+    * Consistency
   * Richness
     * For any assignment of objects to clusters, there is some distance matrix, D,
       such that P_D returns that clustering
@@ -185,6 +186,10 @@ some rewards and penalties and hopefully he will learn.
   * Model-Free gets thrown into the world and learns the model on its own based
     on "[s, a, s', r]" tuples.
     * Q Learning
+* Three types of RL
+  * Policy Search - direct use, indirect learning
+  * Value function based - ^Argmax
+  * Model based - indirect use, direct learning ^Solve Bellman
 
 * **Q Learning**
   * Q Function is a modification of the Bellman Equation
