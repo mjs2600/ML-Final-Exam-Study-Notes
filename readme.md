@@ -1,10 +1,10 @@
-##Content Overview/Important Concepts
+## Content Overview/Important Concepts
 More detailed info and reading can be found in the repo subdirectories
 
 ### Wiki Study Guide
 http://wiki.omscs.org/confluence/display/CS7641ML/CS7641.FA14.+Final+exam+prep
 
-###Unsupervised Learning
+### Unsupervised Learning
 UL consists of algorithms that are meant to "explore" on their own and provide
 the user with valuable information concerning their dataset/problem
 
@@ -133,7 +133,7 @@ the user with valuable information concerning their dataset/problem
     * Can be used in supervised learning as an alternative to squared error
 
 
-###Reinforcement Learning
+### Reinforcement Learning
 
 [Reinforcement Learning: A Survey](http://www.jair.org/media/301/live-301-1562-jair.pdf)
 
@@ -199,7 +199,7 @@ some rewards and penalties and hopefully he will learn.
   * Learning Rate, ![alpha](http://mathurl.com/827tag.png), is how far we move
     each iteration.
   * If each action is executed in each state an infinite number of times on an
-    infinite run and ![alpha](http://mathurl.com/827tag.png) is decayed appropriately, the Q values will converge with probability 1 to Q*
+    infinite run and ![alpha](http://mathurl.com/827tag.png) is decayed appropriately, the Q values will converge with probability 1 to Q*
   * Exploration vs Exploitation
     * Epsilon Greedy Exploration
       * Search randomly with some decaying probability like
